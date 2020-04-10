@@ -12,18 +12,6 @@
     </a>
     <a class="logo" href="#" (click)="navigateHome()">BFPAM</a>
   </div>
-  <nb-select
-    status="primary"
-    matRipple
-    [selected]="currentTheme"
-    (selectedChange)="changeTheme($event)"
-  >
-    <nb-option
-      *ngFor="let theme of themes"
-      [value]="theme.value"
-      matRipple
-    >{{ theme.name }}</nb-option>
-  </nb-select>
 </div>
 
 <div class="header-container">
@@ -36,13 +24,6 @@
         [matRippleUnbounded]="true"
         [matRippleCentered]="true"
       ></nb-search></nb-action>
-    <nb-action
-      class="control-item"
-      icon="email-outline"
-      matRipple
-      [matRippleUnbounded]="true"
-      [matRippleCentered]="true"
-    ></nb-action>
     <nb-action
       class="control-item"
       icon="bell-outline"

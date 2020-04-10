@@ -91,6 +91,23 @@ $nb-themes: nb-register-theme((
 ), dark, dark);
 
 $nb-themes: nb-register-theme((
+  color-primary-100: #d9c6da,
+  color-primary-200: #eac0c0,
+  color-primary-300: #dd8d89,
+  color-primary-400: #dd6477,
+  color-primary-500: #BC3820,
+  color-primary-600: #97260b,
+  color-primary-700: #7a1f0b,
+  color-primary-800: #6b1b0b,
+  color-primary-900: #541b0c,
+
+  color-primary-transparent-100: rgba(122, 31, 11, 0.08),
+  color-primary-transparent-200: rgba(113, 29, 12, 0.16),
+  color-primary-transparent-300: rgba(103, 27, 12, 0.24),
+  color-primary-transparent-400: rgba(94, 25, 12, 0.32),
+  color-primary-transparent-500: rgba(114, 33, 12, 0.4),
+  color-primary-transparent-600: rgba(85, 23, 11, 0.48),
+
   layout-padding-top: 2.25rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
@@ -133,27 +150,5 @@ $nb-themes: nb-register-theme((
   slide-out-shadow-color: 0 4px 14px 0 #292929,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #292929,
 ), material-dark, material-dark);
-
-$nb-themes: nb-register-theme((
-  layout-padding-top: 2.25rem,
-
-  menu-item-icon-margin: 0 0.5rem 0 0,
-
-  card-height-tiny: 13.5rem,
-  card-height-small: 21.1875rem,
-  card-height-medium: 28.875rem,
-  card-height-large: 36.5625rem,
-  card-height-giant: 44.25rem,
-  card-margin-bottom: 1.875rem,
-  card-header-with-select-padding-top: 0.5rem,
-  card-header-with-select-padding-bottom: 0.5rem,
-
-  select-min-width: 6rem,
-  option-list-border-radius: 0,
-
-  slide-out-background: linear-gradient(270deg, #e0e0e0 0%, #ebebeb 100%),
-  slide-out-shadow-color: 0 4px 14px 0 #ebebeb,
-  slide-out-shadow-color-rtl: 0 4px 14px 0 #ebebeb,
-), material-bfpam, material-light);
 
 

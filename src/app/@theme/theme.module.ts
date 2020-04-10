@@ -18,7 +18,6 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 
 import {
-  FooterComponent,
   HeaderComponent,
   SearchInputComponent,
   TinyMCEComponent,
@@ -35,12 +34,7 @@ import {
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
 } from './layouts';
-import { DEFAULT_THEME } from './styles/theme.default';
-import { COSMIC_THEME } from './styles/theme.cosmic';
-import { CORPORATE_THEME } from './styles/theme.corporate';
-import { DARK_THEME } from './styles/theme.dark';
 import { MATERIAL_LIGHT_THEME } from './styles/material/theme.material-light';
-import { MATERIAL_DARK_THEME } from './styles/material/theme.material-dark';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -58,7 +52,6 @@ const NB_MODULES = [
 ];
 const COMPONENTS = [
   HeaderComponent,
-  FooterComponent,
   SearchInputComponent,
   TinyMCEComponent,
   OneColumnLayoutComponent,
@@ -85,9 +78,9 @@ export class ThemeModule {
       providers: [
         ...NbThemeModule.forRoot(
           {
-            name: 'default',
+            name: 'material-light',
           },
-          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME, MATERIAL_LIGHT_THEME, MATERIAL_DARK_THEME ],
+          [MATERIAL_LIGHT_THEME],
         ).providers,
       ],
     };
