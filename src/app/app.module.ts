@@ -43,4 +43,5 @@ import {
   bootstrap: [AppComponent],
 })
 export class AppModule {
+  title = 'BFPAM';
 }

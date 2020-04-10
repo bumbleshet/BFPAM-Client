@@ -1,7 +1,7 @@
 import { NbJSThemeOptions } from '@nebular/theme';
 
 const palette = {
-  primary: '#e91d63',
+  primary: '#6200ee',
   success: '#60af20',
   info: '#0495ee',
   warning: '#ff9f05',
@@ -9,29 +9,29 @@ const palette = {
 };
 
 export const baseTheme: NbJSThemeOptions = {
-  name: 'material-dark',
-  base: 'dark',
+  name: 'material-light',
+  base: 'default',
   variables: {
     fontMain: 'Roboto, sans-serif',
     fontSecondary: 'Roboto, sans-serif',
 
-    bg: '#383838',
-    bg2: '#292929',
-    bg3: '#1f1f1f',
-    bg4: '#141414',
+    bg: '#ffffff',
+    bg2: '#f5f5f5',
+    bg3: '#ebebeb',
+    bg4: '#e0e0e0',
 
-    border: '#383838',
-    border2: '#292929',
-    border3: '#1f1f1f',
-    border4: '#141414',
-    border5: '#141414',
+    border: '#ffffff',
+    border2: '#f5f5f5',
+    border3: '#ebebeb',
+    border4: '#e0e0e0',
+    border5: '#b3b3b3',
 
-    fg: '#808080',
-    fgHeading: '#ffffff',
-    fgText: '#ffffff',
+    fg: '#838383',
+    fgHeading: '#1a2138',
+    fgText: '#1a2138',
     fgHighlight: palette.primary,
-    layoutBg: '#1f1f1f',
-    separator: '#1f1f1f',
+    layoutBg: '#ebebeb',
+    separator: '#ebebeb',
 
     primary: palette.primary,
     success: palette.success,
@@ -39,7 +39,7 @@ export const baseTheme: NbJSThemeOptions = {
     warning: palette.warning,
     danger: palette.danger,
 
-    primaryLight: '#f24681',
+    primaryLight: '#903df4',
     successLight: '#8fcf50',
     infoLight: '#40bbf4',
     warningLight: '#ffbe43',
@@ -49,8 +49,8 @@ export const baseTheme: NbJSThemeOptions = {
 
 const baseThemeVariables = baseTheme.variables;
 
-export const MATERIAL_DARK_THEME = {
-  name: 'material-dark',
+export const MATERIAL_LIGHT_THEME = {
+  name: 'material-light',
   base: 'default',
   variables: {
     temperature: {
