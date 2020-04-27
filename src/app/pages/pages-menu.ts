@@ -31,7 +31,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Cities',
     icon: 'map-outline',
-    link: '/pages/dashboard',
+    link: '/pages/city/list',
   },
   {
     title: 'Services',

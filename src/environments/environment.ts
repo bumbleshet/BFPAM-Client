@@ -10,4 +10,6 @@
 
 export const environment = {
   production: false,
+  mainLogo: 'assets/images/bfp.png',
+  BFPAM_SERVER: 'http://bfpam.server.local',
 };

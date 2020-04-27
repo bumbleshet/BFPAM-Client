@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { NbCardModule, NbIconModule, NbInputModule, NbTreeGridModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
-import { ThemeModule } from '../../@theme/theme.module';
-import { TablesRoutingModule, routedComponents } from './tables-routing.module';
-import { FsIconComponent } from './tree-grid/tree-grid.component';
+import { ThemeModule } from '../@theme/theme.module';
+import { TablesRoutingModule, routedComponents } from './city-routing.module';
+import { CityService } from './services/city.service';
 
 @NgModule({
   imports: [
@@ -16,9 +16,9 @@ import { FsIconComponent } from './tree-grid/tree-grid.component';
     TablesRoutingModule,
     Ng2SmartTableModule,
   ],
+  providers: [CityService],
   declarations: [
     ...routedComponents,
-    FsIconComponent,
   ],
 })
-export class TablesModule { }
+export class CityModule { }

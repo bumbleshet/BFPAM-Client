@@ -12,7 +12,7 @@ import {
   PlayerService,
   SeoService,
   StateService,
-} from './utils';
+} from './services';
 import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
 import { SmartTableData } from './data/smart-table';
@@ -52,7 +52,7 @@ import { CountryOrderService } from './mock/country-order.service';
 import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
-import { RippleService } from './utils/ripple.service';
+import { RippleService } from './services/ripple.service';
 import { MockDataModule } from './mock/mock-data.module';
 
 const socialLinks = [

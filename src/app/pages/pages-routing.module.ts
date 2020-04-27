@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'city',
+      loadChildren: () => import('../city/city.module')
+        .then(m => m.CityModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
@@ -57,11 +62,6 @@ const routes: Routes = [{
       path: 'editors',
       loadChildren: () => import('./editors/editors.module')
         .then(m => m.EditorsModule),
-    },
-    {
-      path: 'tables',
-      loadChildren: () => import('./tables/tables.module')
-        .then(m => m.TablesModule),
     },
     {
       path: 'miscellaneous',
