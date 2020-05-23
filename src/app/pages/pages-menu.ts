@@ -48,15 +48,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'award-outline',
     link: '/pages/dashboard',
   },
-  {
-    title: 'Admin',
-    icon: 'settings-outline',
-    children: [
-      {
-        title: 'Users',
-        link: '/pages/layout/stepper',
-        icon: 'people-outline',
-      },
-    ],
-  },
+  // {
+  //   title: 'Admin',
+  //   icon: 'settings-outline',
+  //   children: [
+  //     {
+  //       title: 'Users',
+  //       link: '/pages/layout/stepper',
+  //       icon: 'people-outline',
+  //     },
+  //   ],
+  // },
 ];
