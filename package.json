@@ -82,7 +82,8 @@
     "tslib": "^1.13.0",
     "typeface-exo": "0.0.22",
     "web-animations-js": "^2.3.2",
-    "zone.js": "^0.10.3"
+    "zone.js": "^0.10.3",
+    "typescript": "3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.900.7",
