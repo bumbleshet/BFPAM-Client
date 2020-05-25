@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-
-import { SmartTableData } from '../../@core/data/smart-table';
-import { CityService } from '../services/city.service';
+import { PermissionService } from '../services/permission.sevice';
+import { SmartTableData } from '../../../@core/data/smart-table';
 
 @Component({
   selector: 'ngx-smart-table',
-  templateUrl: './city-list.component.html',
-  styleUrls: ['./city-list.component.scss'],
+  templateUrl: './permission-list.component.html',
+  styleUrls: ['./permission-list.component.scss'],
 })
-export class CityListComponent {
+export class PermissionListComponent {
 
   settings = {
     columns: {
@@ -42,12 +41,16 @@ export class CityListComponent {
     },
   };
 
+  cities: any;
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData, private cityService: CityService) {
-    this.cityService.getCities().subscribe(data => {
+  constructor(private service: SmartTableData, private permissionService: PermissionService) {
+    this.permissionService.getPermissions().subscribe(data => {
       this.source.load(data);
     });
+
+    // const data = this.service.getData();
+    // console.log(data);
   }
 
   onDeleteConfirm(event): void {

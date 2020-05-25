@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CityComponent } from './city.component';
-import { CityListComponent } from './city-list/city-list.component';
+import { UserComponent } from './user.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [{
   path: '',
-  component: CityComponent,
+  component: UserComponent,
   children: [
     {
       path: 'list',
-      component: CityListComponent,
+      component: UserListComponent,
     },
   ],
 }];
@@ -18,9 +18,9 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CityRoutingModule { }
+export class UserRoutingModule { }
 
 export const routedComponents = [
-  CityComponent,
-  CityListComponent,
+  UserComponent,
+  UserListComponent,
 ];

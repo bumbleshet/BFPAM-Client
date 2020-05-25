@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import { SmartTableData } from '../../@core/data/smart-table';
-import { CityService } from '../services/city.service';
+import { SmartTableData } from '../../../@core/data/smart-table';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'ngx-smart-table',
-  templateUrl: './city-list.component.html',
-  styleUrls: ['./city-list.component.scss'],
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss'],
 })
-export class CityListComponent {
+export class UserListComponent {
 
   settings = {
     columns: {
@@ -42,10 +42,11 @@ export class CityListComponent {
     },
   };
 
+  users: any;
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData, private cityService: CityService) {
-    this.cityService.getCities().subscribe(data => {
+  constructor(private service: SmartTableData, private userService: UserService) {
+    this.userService.getUsers().subscribe(data => {
       this.source.load(data);
     });
   }

@@ -16,6 +16,11 @@ const routes: Routes = [{
         .then(m => m.CityModule),
     },
     {
+      path: 'admin',
+      loadChildren: () => import('../admin/admin.module')
+        .then(m => m.AdminModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },

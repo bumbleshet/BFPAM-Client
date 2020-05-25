@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { NbCardModule, NbIconModule, NbInputModule, NbTreeGridModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
-import { ThemeModule } from '../@theme/theme.module';
-import { CityRoutingModule, routedComponents } from './city-routing.module';
-import { CityService } from './services/city.service';
+import { ThemeModule } from '../../@theme/theme.module';
+import { TablesRoutingModule, routedComponents } from './permission-routing.module';
+import { PermissionService } from './services/permission.sevice';
 
 @NgModule({
   imports: [
@@ -13,12 +13,12 @@ import { CityService } from './services/city.service';
     NbIconModule,
     NbInputModule,
     ThemeModule,
-    CityRoutingModule,
+    TablesRoutingModule,
     Ng2SmartTableModule,
   ],
-  providers: [CityService],
+  providers: [PermissionService],
   declarations: [
     ...routedComponents,
   ],
 })
-export class CityModule { }
+export class PermissionModule { }

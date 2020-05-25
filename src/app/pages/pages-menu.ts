@@ -54,8 +54,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Users',
-        link: '/pages/layout/stepper',
+        link: '/pages/admin/user/list',
         icon: 'people-outline',
+      },
+      {
+        title: 'User Permissions',
+        link: '/pages/admin/permission/list',
+        icon: 'lock-outline',
       },
     ],
   },

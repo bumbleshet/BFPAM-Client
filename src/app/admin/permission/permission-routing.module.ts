@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CityComponent } from './city.component';
-import { CityListComponent } from './city-list/city-list.component';
+import { PermissionComponent } from './permission.component';
+import { PermissionListComponent } from './permission-list/permission-list.component';
 
 const routes: Routes = [{
   path: '',
-  component: CityComponent,
+  component: PermissionComponent,
   children: [
     {
       path: 'list',
-      component: CityListComponent,
+      component: PermissionListComponent,
     },
   ],
 }];
@@ -18,9 +18,9 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CityRoutingModule { }
+export class TablesRoutingModule { }
 
 export const routedComponents = [
-  CityComponent,
-  CityListComponent,
+  PermissionComponent,
+  PermissionListComponent,
 ];
