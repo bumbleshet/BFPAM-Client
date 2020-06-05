@@ -11,5 +11,5 @@
 export const environment = {
   production: false,
   mainLogo: 'assets/images/bfp.png',
-  BFPAM_SERVER: 'http://bfpam.server.local',
+    BFPAM_SERVER: 'https://bfpam-server.herokuapp.com',
 };
