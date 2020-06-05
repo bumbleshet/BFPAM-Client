@@ -12,6 +12,7 @@ import { CityService } from '../services/city.service';
 export class CityListComponent {
 
   settings = {
+    actions: false,
     columns: {
       id: {
         title: 'ID',
@@ -24,20 +25,6 @@ export class CityListComponent {
       deactivate_flag: {
         title: 'Deactivated',
         type: 'boolean',
-      },
-      add: {
-        addButtonContent: '<i class="nb-plus"></i>',
-        createButtonContent: '<i class="nb-checkmark"></i>',
-        cancelButtonContent: '<i class="nb-close"></i>',
-      },
-      edit: {
-        editButtonContent: '<i class="nb-edit"></i>',
-        saveButtonContent: '<i class="nb-checkmark"></i>',
-        cancelButtonContent: '<i class="nb-close"></i>',
-      },
-      delete: {
-        deleteButtonContent: '<i class="nb-trash"></i>',
-        confirmDelete: true,
       },
     },
   };

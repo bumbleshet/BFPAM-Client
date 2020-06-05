@@ -110,6 +110,7 @@
     ],
     "component-selector": [
       true,
+      "attribute",
       "element",
       "ngx",
       "kebab-case"

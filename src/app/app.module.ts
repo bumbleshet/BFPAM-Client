@@ -11,10 +11,9 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NbAuthJWTToken, NbPasswordAuthStrategy } from '@nebular/auth';
 import { NbAuthModule } from '@nebular/auth';
 import { AuthGuard } from './auth-guard.service';
-import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -24,13 +23,6 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-
-const loginFormSetting: any = {
-  redirectDelay: 0,
-  showMessages: {
-    success: false,
-  },
-};
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,9 +40,11 @@ const loginFormSetting: any = {
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
-    NbAuthModule,
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    NbAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers:  [AuthGuard],
   bootstrap: [AppComponent],

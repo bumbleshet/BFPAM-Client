@@ -1,10 +1,29 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbIconModule, NbInputModule, NbTreeGridModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-
 import { ThemeModule } from '../../@theme/theme.module';
+import { UserApiService } from './services/user.api.service';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { BlockCopyPasteDirective } from './directives/block-copy-paste.directive';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserRoutingModule, routedComponents } from './user-routing.module';
-import { UserService } from './services/user.service';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbIconModule,
+  NbInputModule,
+  NbSelectModule,
+  NbTreeGridModule,
+  NbRadioModule,
+  NbSpinnerModule,
+} from '@nebular/theme';
+
+const COMPONENTS = [
+  AddUserComponent,
+];
+
+const ENTRY_COMPONENTS = [
+  AddUserComponent,
+];
 
 @NgModule({
   imports: [
@@ -15,10 +34,26 @@ import { UserService } from './services/user.service';
     ThemeModule,
     UserRoutingModule,
     Ng2SmartTableModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbSpinnerModule,
   ],
-  providers: [UserService],
+  exports: [
+    BlockCopyPasteDirective,
+  ],
+  providers: [
+    UserApiService,
+  ],
   declarations: [
+    BlockCopyPasteDirective,
+    ...COMPONENTS,
     ...routedComponents,
+  ],
+  entryComponents: [
+    ...ENTRY_COMPONENTS,
   ],
 })
 export class UserModule { }
