@@ -1,0 +1,33 @@
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+
+  ::ng-deep {
+    ng2-smart-table {
+      table {
+        tbody {
+          /* Alternating row colour */
+          tr:nth-child(2n) {
+            background-color: #ffffff;
+          }
+          tr:hover {
+            background-color: #a6a6a6 !important;
+          }
+          tr.selected {
+            background-color: #ffffff !important;
+          }
+          tr.selected:hover {
+            background-color: #a6a6a6 !important;
+          }
+          tr.newly-added-row {
+            background-color: #b3b3b3 !important;
+          }
+          tr.newly-added-row.selected {
+            background-color: #d3d3d3 !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -21,11 +21,15 @@ export class ApiService {
 
     return this.http.get<T>(url)
       .pipe(
-        map(data =>
-          data[Object.keys(data)[0]].map((item: any) => {
-            return new ModelMapper(itemType).map(item);
-          },
-        )),
+        map(data => {
+          if (!Array.isArray(data[Object.keys(data)[0]])) {
+            return new ModelMapper(itemType).map(data[Object.keys(data)[0]]);
+          }
+
+          return data[Object.keys(data)[0]].map((item: any) => {
+              return new ModelMapper(itemType).map(item);
+          });
+        }),
       );
   }
 

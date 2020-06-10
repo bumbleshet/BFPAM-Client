@@ -1,0 +1,36 @@
+@include nb-install-component() {
+  input {
+    width: 100%;
+  }
+
+  label {
+    margin-top: 0.2rem;
+    text-align: right;
+  }
+
+  .scrollable-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 47vh;
+    width: 60vw;
+    padding-right: 3rem;
+  }
+
+  .add-form-container {
+    margin-top: 15vh;
+    height: 100vh;
+    width: 70vw;
+  }
+
+  .cancel {
+    margin-right: 1rem;
+  }
+
+  /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: nb-theme(color-primary-default);
+  }
+
+  /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: nb-theme(color-primary-default);
+  }
+}

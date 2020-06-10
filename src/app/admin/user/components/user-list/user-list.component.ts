@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 })
 export class UserListComponent {
   source: LocalDataSource = new LocalDataSource();
-  router: Router;
 
   settings = {
     actions: false,
@@ -60,21 +59,28 @@ export class UserListComponent {
   };
 
   lastInsertedId: number;
+
+  // button loading status
   loading = false;
 
   constructor(
     private service: SmartTableData,
-    private userService: UserApiService,
+    private userApiService: UserApiService,
     private dialogService: NbDialogService,
+    private router: Router,
   ) {
     this.loading = true;
-    this.userService.getUsers().subscribe(data => {
-      // get last user_id
-      this.lastInsertedId = data[0].user_id;
+    this.userApiService.getUsers().subscribe(
+      response => {
+        if (response) {
+          this.lastInsertedId = response[0].user_id;
 
-      this.source.load(data);
+          this.source.load(response);
+        }
+
       this.loading = false;
-    });
+    },
+    );
   }
 
   showAddUsers() {
@@ -102,7 +108,6 @@ export class UserListComponent {
   }
 
   editUser(user) {
-    // this.route.navigate('detail:'+value.data.Id)
-    console.log(user.data);
+    this.router.navigate(['/pages/admin/user/edit', user.data.user_id]);
   }
 }

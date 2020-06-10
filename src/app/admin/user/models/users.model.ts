@@ -26,4 +26,12 @@ export class UsersModel {
     Object.assign(this, input);
     return this;
   }
+
+  unmapUserTypeValue() {
+      Object.defineProperty(this, 'user_type' , {
+        value: (this.user_type === 'Admin') ? UsersModel.ADMIN : UsersModel.INSPECTOR,
+        enumerable  : true,
+        configurable: true,
+      });
+  }
 }

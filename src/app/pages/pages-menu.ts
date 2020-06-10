@@ -58,8 +58,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         icon: 'people-outline',
       },
       {
-        title: 'User Permissions',
-        link: '/pages/admin/permission/list',
+        title: 'Permissions',
+        link: '/pages/admin/permission/modules',
         icon: 'lock-outline',
       },
     ],

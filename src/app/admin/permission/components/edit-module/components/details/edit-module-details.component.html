@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-12">
+    <nb-card>
+      <nb-card-header>
+        <button nbButton
+                size="small"
+                outline
+                class="button-outline">
+          Back <nb-icon icon="arrow-back-outline"></nb-icon>
+        </button>
+        <button nbButton
+                status="success"
+                size="small">
+          Save <nb-icon icon="save-outline"></nb-icon>
+        </button>
+        <button nbButton
+                size="small"
+                outline
+                class="button-outline">
+          Reset <nb-icon icon="refresh-outline"></nb-icon>
+        </button>
+      </nb-card-header>
+      <nb-card-body [nbSpinner]="loading" nbSpinnerSize="giant">
+        <form [formGroup]="editModuleForm">
+          <div class="form-group row">
+            <label for="module_code" class="label col-md-2 col-form-label">Module: </label>
+            <div class="col-md-10">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="module_code"
+                id="module_code"
+                nbInput
+                fullWidth
+                [attr.disabled]="true"
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="module_description" class="label col-md-2 col-form-label">Description: </label>
+            <div class="col-md-10">
+              <input
+                type="email"
+                class="form-control"
+                formControlName="module_description"
+                id="module_description"
+                nbInput
+                fullWidth
+                placeholder="Module Description"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 label" for="user_type_admin">Admin: </label>
+            <div class="col-md-10">
+              <mat-slide-toggle
+                color="primary"
+                formControlName="user_type_admin"
+                id="user_type_admin"
+                required>
+              </mat-slide-toggle>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 label" for="user_type_inspector">Inspector: </label>
+            <div class="col-md-10">
+              <mat-slide-toggle
+                color="primary"
+                formControlName="user_type_inspector"
+                id="user_type_inspector"
+                required>
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <div class="float-right">
+          <button nbButton
+                  size="small"
+                  outline
+                  class="button-outline">
+            Back <nb-icon icon="arrow-back-outline"></nb-icon>
+          </button>
+          <button nbButton
+                  status="success"
+                  size="small">
+            Save <nb-icon icon="save-outline"></nb-icon>
+          </button>
+          <button nbButton
+                  size="small"
+                  outline
+                  class="button-outline">
+            Reset <nb-icon icon="refresh-outline"></nb-icon>
+          </button>
+        </div>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

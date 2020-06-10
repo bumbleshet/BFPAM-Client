@@ -7,15 +7,17 @@ import { BlockCopyPasteDirective } from './directives/block-copy-paste.directive
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserRoutingModule, routedComponents } from './user-routing.module';
 import {
-  NbButtonModule,
-  NbCardModule,
-  NbIconModule,
-  NbInputModule,
-  NbSelectModule,
-  NbTreeGridModule,
-  NbRadioModule,
-  NbSpinnerModule,
+    NbButtonModule,
+    NbCardModule,
+    NbIconModule,
+    NbInputModule,
+    NbSelectModule,
+    NbTreeGridModule,
+    NbRadioModule,
+    NbSpinnerModule,
+    NbRouteTabsetModule,
 } from '@nebular/theme';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 const COMPONENTS = [
   AddUserComponent,
@@ -40,6 +42,8 @@ const ENTRY_COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     NbSpinnerModule,
+    NbRouteTabsetModule,
+    MatSlideToggleModule,
   ],
   exports: [
     BlockCopyPasteDirective,

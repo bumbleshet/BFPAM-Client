@@ -6,7 +6,7 @@
         <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
           <div class="scrollable-container">
             <div class="form-group row">
-              <label for="email" class="label col-md-2 col-form-label">Email: </label>
+              <label for="email" class="col-md-2 col-form-label">Email: </label>
               <div class="col-md-10">
                 <input
                   type="email"
@@ -21,7 +21,7 @@
             </div>
 
             <div class="form-group row">
-              <label for="password" class="label col-md-2 col-form-label">Password: </label>
+              <label for="password" class="col-md-2 col-form-label">Password: </label>
               <div class="col-md-10">
                 <input
                   type="password"
@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-group row" *ngIf="forms.password.valid">
-              <label for="confirmPassword" class="label col-md-2 col-form-label">Confirm Password: </label>
+              <label for="confirmPassword" class="col-md-2 col-form-label">Confirm Password: </label>
               <div class="col-md-10">
                 <input
                   type="password"
@@ -58,7 +58,7 @@
             </div>
 
             <div class="form-group row">
-              <label for="firstName" class="label col-md-2 col-form-label">First Name: </label>
+              <label for="firstName" class="col-md-2 col-form-label">First Name: </label>
               <div class="col-md-10">
                 <input
                   type="text"
@@ -74,7 +74,7 @@
             </div>
 
             <div class="form-group row">
-              <label for="lastName" class="label col-md-2 col-form-label">Last Name: </label>
+              <label for="lastName" class="col-md-2 col-form-label">Last Name: </label>
               <div class="col-md-10">
                 <input
                   type="text"
@@ -90,7 +90,7 @@
             </div>
 
             <div class="form-group row">
-              <label class="col-md-2 label">User Type: </label>
+              <label class="col-md-2">User Type: </label>
               <div class="col-md-10">
                 <nb-radio-group formControlName="user_type">
                   <nb-radio name="user_type" value="{{admin}}">Admin</nb-radio>

@@ -1,0 +1,14 @@
+<nb-card [nbSpinner]="loading" nbSpinnerSize="giant">
+  <nb-card-header>
+    <nb-icon icon="lock-outline"></nb-icon> Permission
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table
+      [settings]="settings"
+      [source]="source"
+      (userRowSelect)="editModuleProcesses($event)"
+    >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

@@ -1,15 +1,37 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { PermissionComponent } from './permission.component';
-import { PermissionListComponent } from './permission-list/permission-list.component';
+import { ModuleListComponent } from './components/module-list/module-list.component';
+import { EditModuleComponent } from './components/edit-module/edit-module.component';
+import { EditModuleDetailsComponent } from './components/edit-module/components/details/edit-module-details.component';
+import { EditModuleProcessesComponent } from './components/edit-module/components/processes/edit-module-processes.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [{
   path: '',
   component: PermissionComponent,
   children: [
     {
-      path: 'list',
-      component: PermissionListComponent,
+      path: 'modules',
+      component: ModuleListComponent,
+    },
+    {
+      path: 'modules/edit/:module_code',
+      component: EditModuleComponent,
+      children: [
+        {
+          path: '',
+          redirectTo: 'details',
+          pathMatch: 'full',
+        },
+        {
+          path: 'details',
+          component: EditModuleDetailsComponent,
+        },
+        {
+          path: 'processes',
+          component: EditModuleProcessesComponent,
+        },
+      ],
     },
   ],
 }];
@@ -22,5 +44,8 @@ export class TablesRoutingModule { }
 
 export const routedComponents = [
   PermissionComponent,
-  PermissionListComponent,
+  ModuleListComponent,
+  EditModuleComponent,
+  EditModuleDetailsComponent,
+  EditModuleProcessesComponent,
 ];

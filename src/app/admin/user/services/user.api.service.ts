@@ -16,7 +16,7 @@ export class UserApiService {
   }
 
   getUser(id: number): Observable<UsersModel> {
-    return this.api.get<UsersModel>(this.url + `/${id}`, UsersModel);
+    return this.api.get<UsersModel>(`${this.url}/${id}`, UsersModel);
   }
 
   insertUser(data: any) {

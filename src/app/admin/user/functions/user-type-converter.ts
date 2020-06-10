@@ -4,11 +4,7 @@ export function userTypeConverter(target: any, key: string) {
   if (delete target[key]) {
     Object.defineProperty(target, key , {
       get: function() {
-        if (this.value === UsersModel.ADMIN) {
-          return 'Admin';
-        } else {
-          return 'Inspector';
-        }
+        return (this.value === UsersModel.ADMIN) ? 'Admin' : 'Inspector';
       },
       set: function(v) { this.value = v; },
       enumerable  : true,
