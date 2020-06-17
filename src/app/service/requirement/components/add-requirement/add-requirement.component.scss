@@ -1,0 +1,12 @@
+@import '../../../../@theme/styles/themes';
+@import '../../../../@theme/styles/forms/add';
+
+@include nb-install-component() {
+  .scrollable-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 60vw;
+    padding-right: 3rem;
+  }
+}

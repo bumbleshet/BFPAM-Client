@@ -1,0 +1,23 @@
+<nb-card [nbSpinner]="loading" nbSpinnerSize="giant">
+  <nb-card-header>
+    <nb-icon icon="people-outline"></nb-icon> Requirements
+  </nb-card-header>
+
+  <nb-card-body>
+    <button nbButton
+            status="primary"
+            size="medium"
+            style="margin-bottom: 15px"
+            (click)="showAddRequirements()">
+      Add <nb-icon icon="plus"></nb-icon>
+    </button>
+
+    <ng2-smart-table
+      [settings]="settings"
+      [source]="source"
+      (userRowSelect)="editRequirement($event)"
+    >
+    </ng2-smart-table>
+
+  </nb-card-body>
+</nb-card>

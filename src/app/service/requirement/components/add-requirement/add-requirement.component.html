@@ -1,0 +1,41 @@
+<div class="add-form-container row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Add Requirements</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="addRequirementForm" (ngSubmit)="onSubmit()">
+          <div class="scrollable-container">
+            <div class="form-group row">
+              <label for="requirement" class="col-md-2 col-form-label">Requirement: </label>
+              <div class="col-md-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="requirement"
+                  id="requirement"
+                  nbInput
+                  fullWidth
+                  [maxLength]="255"
+                  placeholder="Requirement"
+                  required>
+              </div>
+            </div>
+            <hr>
+            <div class="float-right">
+              <button class="cancel" nbButton matRipple status="danger" (click)="close()">Close</button>
+              <button
+                type="submit"
+                nbButton
+                matRipple
+                status="success"
+                [nbSpinner]="saving"
+                [disabled]="addRequirementForm.invalid">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

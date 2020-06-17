@@ -47,17 +47,20 @@ export class ApiToastService {
     const errors = httpErrors.error;
     if (typeof errors !== 'object') { return errors; }
 
-    const errorMessages = [];
-    Object.entries(errors.detail).forEach(([key, val]) => {
-      Object.entries(val).forEach((element) => {
-
+    let errorMessages = [];
+    if (typeof(errors.detail) === 'string') {
+      errorMessages = [errors.detail];
+    } else {
+      Object.entries(errors.detail).forEach(([key, val]) => {
+        Object.entries(val).forEach((element) => {
           if (typeof element === 'object') {
             errorMessages.push(this.parseMessages(element));
           } else {
             errorMessages.push(element);
           }
         });
-    });
+      });
+    }
 
     return errorMessages;
   }

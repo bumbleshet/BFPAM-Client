@@ -1,47 +1,32 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableData } from '../../../../@core/data/smart-table';
-import { UserApiService } from '../../services/user.api.service';
+import { RequirementApiService } from '../../services/requirement.api.service';
 import { NbDialogService } from '@nebular/theme';
-import { AddUserComponent } from '../add-user/add-user.component';
-import { UsersModel } from '../../models/users.model';
+import { AddRequirementComponent } from '../add-requirement/add-requirement.component';
+import { RequirementsModel } from '../../models/requirements.model';
 import { ModelMapper } from '../../../../@core/utils/model-mapper';
 import { Router } from '@angular/router';
 import { ApiToastService } from '../../../../@core/services/api-toast.service';
 
 @Component({
-  selector: 'ngx-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss'],
+  selector: 'ngx-requirement-list',
+  templateUrl: './requirement-list.component.html',
+  styleUrls: ['./requirement-list.component.scss'],
 })
-export class UserListComponent {
+export class RequirementListComponent {
   source: LocalDataSource = new LocalDataSource();
 
   settings = {
     actions: false,
     columns: {
-      user_id: {
+      requirement_id: {
         title: 'ID',
         type: 'text',
         class: 'text-center',
       },
-      email: {
-        title: 'E-mail',
-        type: 'text',
-        class: 'text-center',
-      },
-      first_name: {
-        title: 'First Name',
-        type: 'text',
-        class: 'text-center',
-      },
-      last_name: {
-        title: 'Last Name',
-        type: 'text',
-        class: 'text-center',
-      },
-      user_type: {
-        title: 'User Type',
+      requirement: {
+        title: 'Requirement',
         type: 'text',
         class: 'text-center',
       },
@@ -51,7 +36,7 @@ export class UserListComponent {
     },
     // change css of newly added row from dialog
     rowClassFunction: (row) => {
-      if (row.data.user_id > this.lastInsertedId) {
+      if (row.data.requirement_id > this.lastInsertedId) {
         return 'newly-added-row';
       }
 
@@ -66,20 +51,19 @@ export class UserListComponent {
 
   constructor(
     private service: SmartTableData,
-    private userApiService: UserApiService,
+    private requirementApiService: RequirementApiService,
     private dialogService: NbDialogService,
     private apiToastService: ApiToastService,
     private router: Router,
   ) {
     this.loading = true;
-    this.userApiService.getUsers().subscribe(
+    this.requirementApiService.getRequirements().subscribe(
       response => {
-        if (response) {
-          this.lastInsertedId = response[0].user_id;
+        console.log(response);
+        this.lastInsertedId = response[0].requirement_id;
 
-          this.source.load(response);
-          this.loading = false;
-        }
+        this.source.load(response);
+        this.loading = false;
       },
       errors => {
         this.apiToastService.showErrorMessage(errors);
@@ -88,21 +72,21 @@ export class UserListComponent {
     );
   }
 
-  showAddUsers() {
+  showAddRequirements() {
     this.loading = true;
-    this.dialogService.open(AddUserComponent, {
+    this.dialogService.open(AddRequirementComponent, {
       closeOnEsc: false,
     }).onClose.subscribe(
       response => {
         if (typeof response !== 'undefined') {
-          let users;
+          let requirements;
 
           // parse response data from dialog
-          users = response.map(data => {
-            return new ModelMapper(UsersModel).map(data);
+          requirements = response.map(data => {
+            return new ModelMapper(RequirementsModel).map(data);
           });
 
-          users.forEach((element) => {
+          requirements.forEach((element) => {
             this.source.prepend(element);
           });
 
@@ -112,7 +96,7 @@ export class UserListComponent {
     );
   }
 
-  editUser(user) {
-    this.router.navigate(['/pages/admin/user/edit', user.data.user_id]);
+  editRequirement(requirement) {
+    this.router.navigate(['/pages/services/requirements/edit', requirement.data.requirement_id]);
   }
 }

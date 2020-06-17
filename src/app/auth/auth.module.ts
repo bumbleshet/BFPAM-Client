@@ -5,7 +5,9 @@ import { RouterModule } from '@angular/router';
 import { NgxLoginComponent } from './login/login.component';
 import { NgxAuthComponent } from './auth/auth.component';
 import { NgxAuthRoutingModule } from './auth-routing.module';
+import {environment} from '../../environments/environment';
 import {NbAuthJWTToken, NbAuthModule, NbPasswordAuthStrategy} from '@nebular/auth';
+import {HasPermissionDirective} from './directives/has-permission.directive';
 import {
   NbAlertModule,
   NbButtonModule,
@@ -14,7 +16,6 @@ import {
   NbCardModule,
   NbLayoutModule,
 } from '@nebular/theme';
-import {environment} from '../../environments/environment';
 
 const loginFormSetting: any = {
   redirectDelay: 0,
@@ -97,8 +98,12 @@ const loginFormSetting: any = {
     }),
   ],
   declarations: [
+    HasPermissionDirective,
     NgxAuthComponent,
     NgxLoginComponent,
+  ],
+  exports: [
+    HasPermissionDirective,
   ],
 })
 export class NgxAuthModule {

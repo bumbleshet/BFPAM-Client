@@ -9,4 +9,3 @@ import { NbAuthComponent } from '@nebular/auth';
 export class NgxAuthComponent extends NbAuthComponent {
 }
 
-

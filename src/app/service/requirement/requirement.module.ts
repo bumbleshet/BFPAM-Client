@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
-import { UserApiService } from './services/user.api.service';
-import { AddUserComponent } from './components/add-user/add-user.component';
-import { BlockCopyPasteDirective } from './directives/block-copy-paste.directive';
-import { HasPermissionDirective } from '../../auth/directives/has-permission.directive';
+import { RequirementApiService } from './services/requirement.api.service';
+import { AddRequirementComponent } from './components/add-requirement/add-requirement.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AuthService } from '../../auth/services/auth.service';
+import {NgxAuthModule} from '../../auth/auth.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { UserRoutingModule, routedComponents } from './user-routing.module';
+import { RequirementRoutingModule, routedComponents } from './requirement-routing.module';
 import {
     NbButtonModule,
     NbCardModule,
@@ -20,14 +19,13 @@ import {
     NbSpinnerModule,
     NbRouteTabsetModule,
 } from '@nebular/theme';
-import {NgxAuthModule} from '../../auth/auth.module';
 
 const COMPONENTS = [
-  AddUserComponent,
+  AddRequirementComponent,
 ];
 
 const ENTRY_COMPONENTS = [
-  AddUserComponent,
+  AddRequirementComponent,
 ];
 
 @NgModule({
@@ -37,7 +35,7 @@ const ENTRY_COMPONENTS = [
     NbIconModule,
     NbInputModule,
     ThemeModule,
-    UserRoutingModule,
+    RequirementRoutingModule,
     Ng2SmartTableModule,
     NbButtonModule,
     NbSelectModule,
@@ -49,15 +47,11 @@ const ENTRY_COMPONENTS = [
     MatSlideToggleModule,
     NgxAuthModule,
   ],
-  exports: [
-    BlockCopyPasteDirective,
-  ],
   providers: [
-    UserApiService,
+    RequirementApiService,
     AuthService,
   ],
   declarations: [
-    BlockCopyPasteDirective,
     ...COMPONENTS,
     ...routedComponents,
   ],
@@ -65,4 +59,4 @@ const ENTRY_COMPONENTS = [
     ...ENTRY_COMPONENTS,
   ],
 })
-export class UserModule { }
+export class RequirementModule { }

@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'service',
+      loadChildren: () => import('../service/service.module')
+        .then(m => m.ServiceModule),
+    },
+    {
       path: 'city',
       loadChildren: () => import('../city/city.module')
         .then(m => m.CityModule),
